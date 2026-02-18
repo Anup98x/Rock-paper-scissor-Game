@@ -4,9 +4,6 @@ let chc = document.querySelectorAll(".userchoice");
 let msg = document.querySelector(".message-box");
 let user = document.querySelector("#cus");
 let cmp = document.querySelector("#robo");
-let winSound = new Audio("click.mp3/winner.mp3");
-let loseSound = new Audio("click.mp3/loser.mp3");
-let drawSound = new Audio("click.mp3/lose.mp3");
 const cmp_genchoice = () => {
     //rock,paper,scissor
     const cmp_choice = ["rock", "paper", "scissors"];
@@ -17,7 +14,6 @@ const draw_choice = () => {
     console.log("Game is a draw! ")
     msg.style.backgroundColor = "rgb(12, 33, 138)";
     msg.innerText = "Game is a draw! Play Again!";
-    drawSound.play();
 }
 const show_win = (userwin, userchoice, computer_Choice) => {
     if (userwin) {
@@ -25,7 +21,6 @@ const show_win = (userwin, userchoice, computer_Choice) => {
         msg.innerText = `You win, Congratulations! Your ${userchoice} beats ${computer_Choice}`;
         userscore++;
         user.innerText = userscore;
-        winSound.play();
         
         // Simple celebration animation
         msg.classList.add('celebrate');
@@ -40,7 +35,6 @@ const show_win = (userwin, userchoice, computer_Choice) => {
         msg.innerText = `You lost!  ${computer_Choice} beats Your ${userchoice}`;
         cmpscore++;
         cmp.innerText = cmpscore;
-        loseSound.play();
     }
 }
 const play = (userchoice) => {
